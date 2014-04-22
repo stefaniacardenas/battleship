@@ -6,12 +6,18 @@ class Board
 
   def rows
 		board_array = []
-		10.times{board_array << (1..10).to_a}
+    row_array = []
+		10.times{row_array << ""}
+    10.times{board_array << row_array}
 		return board_array
 	end
 
   def owner
     @player.name
+  end
+
+  def place(boat)
+
   end
 
 end
