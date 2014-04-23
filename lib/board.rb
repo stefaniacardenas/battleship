@@ -22,14 +22,25 @@ class Board
 	return @board_array
   end
 
+  def opponent_view
+  	opponent_array = []
+  	10.times { opponent_array << Array.new(10,"")}
+	return opponent_array
+  end
+
   def translate(coordinates)
-  	coordinate = []
-    letter = coordinates.chars.first
-    coordinate << LETTER_TO_COLUMN[letter]
-    number = coordinates.chars.last.to_i
+    extract_column(coordinates) + extract_row(coordinates)
+ 	end
+
+def extract_column(coordinates)
+	letter = coordinates.chars.first
+    [] << LETTER_TO_COLUMN[letter]
+end
+
+def extract_row(coordinates)
+	number = coordinates.chars.last.to_i
     number -= 1
-    coordinate << number
-    coordinate
+    [] << number
 end
 
 
