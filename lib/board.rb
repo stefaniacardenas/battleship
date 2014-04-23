@@ -5,10 +5,8 @@ class Board
   end
 
   def rows
-		board_array = []
-    row_array = []
-		10.times{row_array << ""}
-    10.times{board_array << row_array}
+    row_array = Array.new(10, "")
+    board_array = Array.new(10, row_array)
 		return board_array
 	end
 
