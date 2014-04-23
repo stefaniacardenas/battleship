@@ -4,7 +4,7 @@ describe 'Board' do
     
   let(:player) {double :player, name: 'Bob'}
 	let(:board)  {Board.new(player)}
-	let(:boat_1) {double :boat , start_point:[1,1] , end_point: [1,7]}
+	let(:boat_1) {double :boat , start_point:[1,1] , end_point: [1,6]}
 	let(:boat_2) {double :boat , start_point:[9,5] , end_point: [8,5]}
 
 	context "Board" do
@@ -14,8 +14,7 @@ describe 'Board' do
 	  end  
 
 	  it "returns one array with ten elements" do
-	  	board
-	  	expect(@board_array.count).to eq 10
+	  	expect(board.board_array.count).to eq 10
 	  end
 
 	  it "each element of the array is an array" do 
@@ -60,11 +59,25 @@ describe 'Board' do
 
 	end
 
-	  it "can place a boat" do
+context "can place a boat" do
+
+	  it "knows the position of boat_1" do
 	  	board.place(boat_1)
 	  	expect(board.board_array[1][5]).to eq "s"
+	  	expect(board.board_array[1][6]).to eq "s"
 	  end
+
+	  it "returns a range of column" do 
+			board.place(boat_1)
+			expect(board.place(boat_1)).to eq (1..1)
+	  end
+
+	end
+
+
+
 end
+
 
 
 
