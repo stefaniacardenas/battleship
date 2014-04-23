@@ -1,14 +1,27 @@
 class Board
 
+  LETTER_TO_COLUMN = Hash[*[*'A'..'J'].each_with_index.map{
+      |letters,index| [letters,index]
+      }.flatten]
+
   def initialize(player='norman_no_name')
     @player = player
   end
 
+  def show_letter_to_column(letter)
+    LETTER_TO_COLUMN[letter]
+  end
+
   def rows
-    row_array = Array.new(10, "")
-    board_array = Array.new(10, row_array)
-		return board_array
+    board = []
+    10.times {board << Array.new(10,"")}
+		return board
 	end
+
+  def translate(coordinates)
+    letter = coordinates.chars.first
+    number = coordinates.chars.last.to_i
+  end
 
   def owner
     @player.name
