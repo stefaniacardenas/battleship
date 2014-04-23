@@ -5,18 +5,22 @@ class Board
       }.flatten]
 
   def initialize(player='norman_no_name')
-    @player = player
+	@player = player
+	board_array
   end
 
   def show_letter_to_column(letter)
     LETTER_TO_COLUMN[letter]
   end
 
+  def board_array
+  	@board_array ||= []
+  end
+
   def rows
-    board = []
-    10.times {board << Array.new(10,"")}
-		return board
-	end
+    10.times { @board_array << Array.new(10,"")}
+	return @board_array
+  end
 
   def translate(coordinates)
     letter = coordinates.chars.first
