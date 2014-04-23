@@ -6,16 +6,17 @@ class Board
 
   def initialize(player='norman_no_name')
 	@player = player
-	board_array
+	@board_array = []
+  rows
   end
 
   def show_letter_to_column(letter)
     LETTER_TO_COLUMN[letter]
   end
 
-  def board_array
-  	@board_array ||= []
-  end
+  # def board_array
+  # 	@board_array ||= []
+  # end
 
   def rows
     10.times { @board_array << Array.new(10,"")}
@@ -49,6 +50,7 @@ end
   end
 
   def place(boat)
+
 
   end
 
