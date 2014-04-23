@@ -23,9 +23,15 @@ class Board
   end
 
   def translate(coordinates)
+  	coordinate = []
     letter = coordinates.chars.first
+    coordinate << LETTER_TO_COLUMN[letter]
     number = coordinates.chars.last.to_i
-  end
+    number -= 1
+    coordinate << number
+    coordinate
+end
+
 
   def owner
     @player.name

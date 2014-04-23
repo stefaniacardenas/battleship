@@ -36,8 +36,12 @@ describe 'Board' do
   expect(board.show_letter_to_column('B')).to eq 1
   end  
 
-  it "translates coordinates to array indices" do
-    expect(board.translate('B1')).to eq [[1],[0]]
+  it "translates coordinates B1 to array indices" do
+    expect(board.translate('B1')).to eq [1,0]
+  end
+
+  it "translates coordinates A1 to array indices" do
+  	expect(board.translate('A1')).to eq [0,0]
   end
 
   it "knows the length of a boat"
