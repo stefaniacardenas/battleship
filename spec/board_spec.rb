@@ -14,7 +14,7 @@ describe 'Board' do
 	  end  
 
 	  it "returns one array with ten elements" do
-	  	expect(board.board_array.count).to eq 10
+	  	expect(board.rows.count).to eq 10
 	  end
 
 	  it "each element of the array is an array" do 
@@ -71,35 +71,25 @@ describe 'Board' do
 
 	  
 
-	  it "can count the boats"
+	  # it "can count the boats"
 
-	  it "knows the length of a boat"
+	  # it "knows the length of a boat"
 
-context "can place a boat" do
+	context "can place a boat" do
 
-  it "can place a boat" do
-  	board.place(boat_1)
-  	expect(board.rows[1][5]).to eq "s"
-  	expect(board.rows[1][6]).to eq "s"
-  end
+	  it "can place a boat" do
+	  	board.place(boat_1)
+	  	expect(board.rows[1][5]).to eq "s"
+	  	expect(board.rows[1][6]).to eq "s"
+	  end
 
-  it "knows the position of boat_1" do
-  	board.place(boat_1)
-  	expect(board.board_array[1][5]).to eq "s"
-  	expect(board.board_array[1][6]).to eq "s"
-  end
+	  it "knows the position of boat_1" do
+	  	board.place(boat_1)
+	  	expect(board.rows[1][5]).to eq "s"
+	  	expect(board.rows[1][6]).to eq "s"
+	  end
 
-  it "returns a range of column" do 
-		board.place(boat_1)
-		expect(board.place(boat_1)).to eq (1..1)
-  end
-
-end
-
-
-
-end
-
+	end
 
 
 
@@ -114,7 +104,7 @@ end
 
 
 	#   it "knows the length of a boat"
->>>>>>> 15d41bb5d5706822808ce869e6376083c789bff2
+
 
 	#   # it "knows the orientation of a boat"
 
@@ -122,3 +112,8 @@ end
 
 	#   it "knows two boats can not be next to each other"
 	# end 
+
+
+
+
+end

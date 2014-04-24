@@ -60,16 +60,11 @@ class Board
     boat.boat_length.each do |coordinate|
       x, y = coordinate
       @rows[x][y] = 's'
-    end
-
-  def place(boat)
-    column_range = (boat.start_point[0]..boat.end_point[0])
-    column_range
-    row_range = (boat.start_point[1]..boat.end_point[1])
-    boat_range = [[*column_range],[*row_range]].select do 
-      |range| range.count > 1 end
   end
 
+  
+
+end
 end
 
 =begin 
