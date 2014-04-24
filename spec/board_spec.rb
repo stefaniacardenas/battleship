@@ -2,7 +2,7 @@ require "board"
 
 describe 'Board' do 
     
-    let(:player) {double :player, name: 'Bob'}
+  let(:player) {double :player, name: 'Bob'}
 	let(:board)  {Board.new(player)}
 	let(:boat_1) {double :boat , boat_length: [[1,1],[1,2],[1,3],[1,4],[1,5],[1,6]]}
 	let(:boat_2) {double :boat , boat_length: [[9,5],[8,5]]}
@@ -14,7 +14,7 @@ describe 'Board' do
 	  end  
 
 	  it "returns one array with ten elements" do
-	  	expect(board.rows.count).to eq 10
+	  	expect(board.board_array.count).to eq 10
 	  end
 
 	  it "each element of the array is an array" do 
@@ -68,19 +68,57 @@ describe 'Board' do
 
 	end
 
-	  it "can place a boat" do
-	  	board.place(boat_1)
-	  	expect(board.rows[1][5]).to eq "s"
-	  	expect(board.rows[1][6]).to eq "s"
-	  end
+
+	  
 
 	  it "can count the boats"
 
 	  it "knows the length of a boat"
 
-	  # it "knows the orientation of a boat"
+context "can place a boat" do
 
-	  it "knows boats can not overlap"
+  it "can place a boat" do
+  	board.place(boat_1)
+  	expect(board.rows[1][5]).to eq "s"
+  	expect(board.rows[1][6]).to eq "s"
+  end
 
-	  it "knows two boats can not be next to each other"
-	end 
+  it "knows the position of boat_1" do
+  	board.place(boat_1)
+  	expect(board.board_array[1][5]).to eq "s"
+  	expect(board.board_array[1][6]).to eq "s"
+  end
+
+  it "returns a range of column" do 
+		board.place(boat_1)
+		expect(board.place(boat_1)).to eq (1..1)
+  end
+
+end
+
+
+
+end
+
+
+
+
+
+
+  # - an 'o' denotes a shot in the water
+  # - an 'x' denotes a hit on a ship
+  # - an 's' denotes a ship
+
+
+
+
+
+	#   it "knows the length of a boat"
+>>>>>>> 15d41bb5d5706822808ce869e6376083c789bff2
+
+	#   # it "knows the orientation of a boat"
+
+	#   it "knows boats can not overlap"
+
+	#   it "knows two boats can not be next to each other"
+	# end 

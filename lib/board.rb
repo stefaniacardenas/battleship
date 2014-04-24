@@ -3,6 +3,9 @@ class Board
   LETTER_TO_COLUMN = {"A"=>0, "B"=>1, "C"=>2, "D"=>3, "E"=>4, 
   	"F"=>5, "G"=>6, "H"=>7, "I"=>8, "J"=>9}
 
+  attr_reader :board_array
+
+
   def initialize(player='norman_no_name')
 	@player = player
 	@rows = create_board
@@ -12,6 +15,7 @@ class Board
   def owner
     @player.name
   end
+
 
   attr_reader :rows
 
@@ -46,6 +50,7 @@ class Board
   	return opponent_array
   end
 
+
   def register_shot(coordinates)
     x, y = translate(coordinates)
     @rows[x][y] = 'o'
@@ -56,6 +61,13 @@ class Board
       x, y = coordinate
       @rows[x][y] = 's'
     end
+
+  def place(boat)
+    column_range = (boat.start_point[0]..boat.end_point[0])
+    column_range
+    row_range = (boat.start_point[1]..boat.end_point[1])
+    boat_range = [[*column_range],[*row_range]].select do 
+      |range| range.count > 1 end
   end
 
 end
