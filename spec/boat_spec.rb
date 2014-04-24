@@ -1,14 +1,21 @@
 require 'boat'
 
 describe Boat do
-	
-  context 'creating a boat' do
-  	let (:boat) {Boat.new(5)}
-  	let (:board) {double :board}
 
-  	it 'boat has a length' do
-  		expect(boat.length).to eq 5
+	let (:boat) {Boat.new(5)}
+  let (:board) {double :board}
+
+  context 'Horizontal boat' do
+  	
+    before do
+      boat.stub(:generate_orientation).and_return(:horizontal)
+    end
+
+    it 'has a length' do
+  		expect(boat.boat_length).to eq 5
   	end
+
+    
 
   end
 end
