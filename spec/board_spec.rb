@@ -4,8 +4,8 @@ describe 'Board' do
     
   let(:player) {double :player, name: 'Bob'}
 	let(:board)  {Board.new(player)}
-	let(:boat_1) {double :boat , boat_length: [[1,1],[1,2],[1,3],[1,4],[1,5],[1,6]]}
-	let(:boat_2) {double :boat , boat_length: [[9,5],[8,5]]}
+	let(:boat_1) {double :boat , boat_body: [[1,1],[1,2],[1,3],[1,4],[1,5],[1,6]]}
+	let(:boat_2) {double :boat , boat_body: [[9,5],[8,5]]}
 
 	context "Board" do
 

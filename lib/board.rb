@@ -46,15 +46,16 @@ class Board
   end
 
   def place(boat)
-    boat.boat_length.each do |coordinate|
+    boat.boat_body.each do |coordinate|
       x, y = coordinate
       @rows[x][y] = 's'
+    end
   end
 
   
 
 end
-end
+
 
 =begin 
 This is how we created our LETTER to column constant:
