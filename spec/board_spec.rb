@@ -45,11 +45,11 @@ describe 'Board' do
 
 	context "Coordinates" do
 
-	  it "LETTER_TO_COLUMN returns 0 for A" do
+	  xit "LETTER_TO_COLUMN returns 0 for A" do
 	    expect(board.show_letter_to_column('A')).to eq 0
 	  end
 
-	  it "LETTER_TO_COLUMN returns 1 for B" do
+	  xit "LETTER_TO_COLUMN returns 1 for B" do
 	  expect(board.show_letter_to_column('B')).to eq 1
 	  end  
 
@@ -61,10 +61,7 @@ describe 'Board' do
 	  	expect(board.translate('A1')).to eq [0,0]
 	  end
 
-	  it "can register a shot" do
-	  	board.register_shot('B2')
-	  	expect(board.rows[1][1]).to eq "o"
-	  end
+	  
 
 	end
 
@@ -91,6 +88,24 @@ describe 'Board' do
 
 	end
 
+	context 'Playing the game' do
+
+	  it 'can hit a boat' do
+	  	board.place(boat_1)
+	  	board.register_shot('B2')
+	  	expect(board.rows[1][1]).to eq 'x'
+	  end
+
+	  it "can register a miss" do
+	  	board.register_shot('B2')
+	  	expect(board.rows[1][1]).to eq "o"
+	  end
+
+
+
+
+	end
+
 
 
 
@@ -103,15 +118,7 @@ describe 'Board' do
 
 
 
-	#   it "knows the length of a boat"
-
-
-	#   # it "knows the orientation of a boat"
-
-	#   it "knows boats can not overlap"
-
-	#   it "knows two boats can not be next to each other"
-	# end 
+	
 
 
 
