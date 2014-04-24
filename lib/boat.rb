@@ -1,10 +1,12 @@
 class Boat
 
+
 	def initialize(boat_length)
 		if boat_length <= 6 && boat_length >= 2
 			generate_random_starting_point_for(boat_length)
+
 		else
-			puts "Your ship can only range from 2 to 6"
+			raise "Your ship can only range from 2 to 6"
 		end
 	end
 	#generates a starting point for this

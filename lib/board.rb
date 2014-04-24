@@ -52,7 +52,10 @@ class Board
   end
 
   def place(boat)
-
+    boat.boat_length.each do |coordinate|
+      x, y = coordinate
+      @rows[x][y] = 's'
+    end
   end
 
 end
