@@ -3,11 +3,12 @@ class Boat
 	# def initialize(boat_length)
 	# 	@length 
 	# end
-
+	attr_reader :boat_body
 
 	def initialize(boat_length)
 		@orientation = [:horizontal, :vertical].sample
 		@boat_length = boat_length
+		
 		if boat_length <= 6 && boat_length >= 2
 			generate_random_starting_point_for(boat_length)
 
@@ -35,14 +36,13 @@ class Boat
 
 	def boat_coordinates(starting_position)
 		x,y = starting_position
-		boat_body = []
 		if @orientation == :horizontal
 			columns = [*(y..(y+@boat_length))]
 			coords = columns.map {|col| [x,col]}
-			return coords
+			@boat_body = coords
 		else rows = [*(x..(x+@boat_length))]
 			coords = rows.map {|row| [row,y]}
-			return coords
+			@boat_body = coords
 			#columns == [5,6,7,8]
 			#rows == [9]
 		end	
