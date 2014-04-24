@@ -5,20 +5,20 @@ class Board
 
   def initialize(player='norman_no_name')
 	@player = player
-	board_array
+	@rows = create_board
   end
+
 
   def owner
     @player.name
   end
 
-  def board_array
-  	@board_array ||= []
-  end
+  attr_reader :rows
 
-  def rows
-    10.times { @board_array << Array.new(10,"")}
-	return @board_array
+  def create_board
+    board=[]
+    10.times { board << Array.new(10,"")}
+    board
   end
 
   def translate(coordinates)
@@ -44,6 +44,11 @@ class Board
     	opponent_array = []
     	10.times { opponent_array << Array.new(10,"")}
   	return opponent_array
+  end
+
+  def register_shot(coordinates)
+    x, y = translate(coordinates)
+    @rows[x][y] = 'o'
   end
 
   def place(boat)

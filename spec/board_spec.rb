@@ -25,6 +25,10 @@ describe 'Board' do
         expect(board.rows[0].count).to eq 10
       end
 
+      it "coordinates [0][0] contains a string" do
+      	expect(board.rows[0][0]).to eq ""
+      end
+
     end
 
 	context "Opponent Board" do
@@ -55,6 +59,11 @@ describe 'Board' do
 
 	  it "translates coordinates A1 to array indices" do
 	  	expect(board.translate('A1')).to eq [0,0]
+	  end
+
+	  it "can register a shot" do
+	  	board.register_shot('B2')
+	  	expect(board.rows[1][1]).to eq "o"
 	  end
 
 	end
