@@ -11,7 +11,7 @@ describe 'Board' do
   let(:boat_overlap) {double :boat , boat_body: [[1,6],[1,7],[1,8]], boat_length: 3}
 
   before do
-    #board.stub(:generate_boats).and_return([boat_1,boat_2,boat_3,boat_4])
+    board.stub(:generate_boats)
   end
 
   context "Board" do
@@ -87,7 +87,7 @@ describe 'Board' do
     it 'can hit a boat' do
       board.stub(:check_availability).and_return(true)
       board.place(boat_1)
-      board.register_shot('B2')
+      board.register_shot('B3')
       expect(board.rows[1][2]).to eq 'x'
     end
 
