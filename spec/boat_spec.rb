@@ -15,6 +15,13 @@ describe Boat do
   		expect(boat.boat_length).to eq 5
   	end
 
+    it 'generates a starting point' do
+      expect(boat.start_point.count).to eq 2
+    end
+
+    it 'returns an array with 2 elements as coordinates' do
+      expect(boat.boat_coordinates.count).to eq 5
+    end
     
 
   end
