@@ -53,6 +53,8 @@ class Board
         x, y = coordinate
         @rows[x][y] = 's'
       end
+    else
+    self.place(Boat.new(boat.boat_length))
     end
   end
 
@@ -60,15 +62,10 @@ class Board
     bad_array = boat.boat_body.select do
       |cell|
       x,y = cell
-      return true if @rows[x][y] == "s"
+      true if @rows[x][y] == "s"
     end
-    if bad_array.empty?
-      true
-    else
-      self.place(Boat.new(boat.boat_length))
-      return false
+    bad_array.nil?
     end
-  end
 
 end
 

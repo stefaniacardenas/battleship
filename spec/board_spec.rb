@@ -4,9 +4,9 @@ describe 'Board' do
 
   let(:player) {double :player, name: 'Bob'}
   let(:board)  {Board.new(player)}
-  let(:boat_1) {double :boat , boat_body: [[1,1],[1,2],[1,3],[1,4],[1,5],[1,6]]}
+  let(:boat_1) {double :boat , boat_body: [[1,1],[1,2],[1,3],[1,4],[1,5],[1,6]], boat_length: 6}
   let(:boat_2) {double :boat , boat_body: [[9,5],[8,5]]}
-  let(:boat_3) {double :boat , boat_body: [[1,6][1,7][1,8]]}
+  let(:boat_3) {double :boat , boat_body: [[1,6][1,7][1,8]], boat_length: 3}
 
   context "Board" do
 
@@ -61,12 +61,14 @@ describe 'Board' do
   context "can place a boat" do
 
     it "can place a boat" do
+      board.stub(:check_availability).and_return(true)
       board.place(boat_1)
       expect(board.rows[1][5]).to eq "s"
       expect(board.rows[1][6]).to eq "s"
     end
 
     it "knows the position of boat_1" do
+      board.stub(:check_availability).and_return(true)
       board.place(boat_1)
       expect(board.rows[1][5]).to eq "s"
       expect(board.rows[1][6]).to eq "s"
@@ -77,6 +79,7 @@ describe 'Board' do
   context 'Playing the game' do
 
     it 'can hit a boat' do
+      board.stub(:check_availability).and_return(true)
       board.place(boat_1)
       board.register_shot('B2')
       expect(board.rows[1][1]).to eq 'x'
@@ -92,13 +95,15 @@ describe 'Board' do
   context 'Boats to board' do
 
     it 'doesn´t place boat when place taken' do
-
+      expect(boat_3).to receive(:boat_length)
+      expect(boat_1).to receive(:boat_length)
+      board.place(boat_1)
+      board.place(boat_3)
+      expect(board.rows[1][7]).to eq ""
     end
 
     it 'places one' do
-      board.place(boat_1)
-      board.place(boat_3)
-      expect(board.rows[1][7]).to eq "s"
+      
     end
 
   end
