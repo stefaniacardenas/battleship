@@ -7,8 +7,7 @@ class Boat
 
 	def initialize(boat_length)
 		@boat_length = boat_length
-		generate_orientation
-		generate_random_starting_point
+		boat_coordinates
 	end
 	#generates a starting point for this
 
@@ -32,6 +31,8 @@ class Boat
 	end
 
 	def boat_coordinates
+		generate_orientation
+		generate_random_starting_point
 		x,y = @start_point
 		if @orientation == :horizontal
 			columns = [*(y..(y+@boat_length-1))]

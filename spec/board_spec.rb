@@ -98,14 +98,18 @@ describe 'Board' do
       expect(board.check_availability(boat_3)).to be_true
     end
 
-    it 'doesn´t place boat when place taken' do
+    it "returns false when boat can't be placed" do
       board.place(boat_1)
-      board.place(boat_3)
-      expect(board.rows[1][7]).to eq ""
+      expect(board.check_availability(boat_3)).to be_false
     end
 
-    it 'places one' do
-      
+    it 'creates 4 boats' do
+      expect(board.boats.count).to eq 4
+    end
+
+    it 'places 4 boats' do
+      board.stub(:check_availability).and_return(true)
+      board.place_all(board.boats)
     end
 
   end

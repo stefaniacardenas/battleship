@@ -1,13 +1,15 @@
-require 'boat'
+require_relative './boat'
 
 class Board
 
 
-  attr_reader :rows
+  attr_reader :rows, :boats
 
   def initialize(player='norman_no_name')
     @player = player
     @rows = create_board
+    @boats = []
+    generate_boats
   end
 
   def owner
@@ -18,6 +20,25 @@ class Board
     board=[]
     10.times { board << Array.new(10,"")}
     board
+  end
+
+  def generate_boats
+    @boats = []
+    @boats << Boat.new(5)
+    @boats <<  Boat.new(4)
+    @boats <<  Boat.new(3)
+    @boats <<  Boat.new(2)
+    place_all(@boats)
+  end
+
+  def place_all(boats)
+    puts "placing boats: #{boats}"
+    boats.each do |boat|
+      until check_availability(boat)
+        boat = Boat.new(boat.boat_length)
+      end
+      place(boat)
+    end
   end
 
   def translate(coordinates)
@@ -48,25 +69,19 @@ class Board
   end
 
   def place(boat)
-    if check_availability(boat)
-      puts "passed availability check"
-      boat.boat_body.each do |coordinate|
-        x, y = coordinate
-        @rows[x][y] = 's'
-      end
+    boat.boat_body.each do |coordinate|
+      x, y = coordinate
+      @rows[x][y] = 's'
     end
   end
 
   def check_availability(boat)
-    puts "checking availability"
-    bad_array = boat.boat_body.select do
-      |cell| puts "here is a cell #{cell}"
+    bad_array = boat.boat_body.select do |cell|
       x,y = cell
       true if @rows[x][y] == "s"
     end
-   puts "bad_array = #{bad_array}"
     bad_array.empty?
-    end
+  end
 
 end
 
