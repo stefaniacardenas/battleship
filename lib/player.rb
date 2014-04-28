@@ -8,7 +8,12 @@ class Player
   end
 
   def has_ships_still_floating?
-    @rows.include?("s")
+  	bad_array = []
+    @board.rows.each{|row| row.each { |deeper_row| bad_array << deeper_row.include?("s")}}
+    bad_array.empty?
+  end
+
+  def shoot(coordinates, opponent_board)
   end
 
 end

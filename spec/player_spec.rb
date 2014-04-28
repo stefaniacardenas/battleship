@@ -8,4 +8,5 @@ describe Player do
 		expect(player.has_ships_still_floating?).to be_true
 	end
 
+	xit 'registers'
 end
