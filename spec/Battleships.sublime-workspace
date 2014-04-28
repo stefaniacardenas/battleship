@@ -1,0 +1,642 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"generat",
+				"generate_random_starting_point_for"
+			],
+			[
+				"dimen",
+				"dimensional_rubics_cube"
+			],
+			[
+				"dime",
+				"dimensional_rubics_cube"
+			],
+			[
+				"dem",
+				"dimensional_rubics_cube"
+			],
+			[
+				"weath",
+				"weather_indicator"
+			],
+			[
+				"weather",
+				"weather_indicator"
+			],
+			[
+				"we",
+				"weather_indicator"
+			],
+			[
+				"pl",
+				"plane_lands_and_docks"
+			],
+			[
+				"plane",
+				"planes_at_airport"
+			],
+			[
+				"co",
+				"container"
+			],
+			[
+				"fill_",
+				"fill_container_dock_array"
+			],
+			[
+				"rel",
+				"release_working_bikes"
+			],
+			[
+				"relea",
+				"release_broken_bikes"
+			],
+			[
+				"gaa",
+				"garage_pickup"
+			],
+			[
+				"station",
+				"station_delivery"
+			],
+			[
+				"release",
+				"release_working_bikes"
+			],
+			[
+				"sta",
+				"station_pickup"
+			],
+			[
+				"gara",
+				"garage_pickup"
+			],
+			[
+				"st",
+				"station_pickup"
+			],
+			[
+				"ga",
+				"garage_pickup"
+			],
+			[
+				"pic",
+				"pick_up_from_g"
+			],
+			[
+				"pickup",
+				"pick_up_from_s"
+			],
+			[
+				"broke",
+				"broken_bikes"
+			],
+			[
+				"recog",
+				"recognize_broken_bike"
+			],
+			[
+				"broken",
+				"broken_bike"
+			],
+			[
+				"has_",
+				"have_bikes"
+			],
+			[
+				"return",
+				"return_bike_to"
+			],
+			[
+				"is_",
+				"is_divisible_by15"
+			],
+			[
+				"is",
+				"is_divisible_by5"
+			],
+			[
+				"di",
+				"divisible"
+			],
+			[
+				"divi",
+				"divisible_by"
+			],
+			[
+				"Fizz",
+				"fizzbuzz"
+			],
+			[
+				"divisibel",
+				"is_divisibel_by5"
+			],
+			[
+				"i",
+				"is_divisible_by3"
+			],
+			[
+				"dis",
+				"divisible_by_15"
+			],
+			[
+				"div",
+				"is_divisible_by_three"
+			],
+			[
+				"id",
+				"is_divisible_by_three"
+			],
+			[
+				"each",
+				"each_with_index"
+			],
+			[
+				"cohort",
+				"cohort_array"
+			],
+			[
+				"march",
+				"march_cohort"
+			],
+			[
+				"april",
+				"april_cohort"
+			],
+			[
+				"delete",
+				"deleteaccount"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "board_spec.rb",
+			"settings":
+			{
+				"buffer_size": 2325,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "require 'boat'\n\ndescribe Boat do\n\n	let (:boat) {Boat.new(5)}\n  let (:board) {double :board}\n\n  context 'Horizontal boat' do\n  	\n    before do\n      boat.stub(:generate_orientation).and_return(:horizontal)\n      boat.stub(:generate_random_starting_point_for(5)).and_return([4,4])\n    end\n\n    it 'has a length' do\n  		expect(boat.boat_length).to eq 5\n  	end\n\n    it 'returns starting position E5' do\n      expect(boat.generate_random_starting_point_for(5)).\n\n\n    \n\n  end\nend\n#   it \"knows the length of a boat\"\n\narray.inject{}\n\n	#   # it \"knows the orientation of a boat\"\n\n	#   it \"knows boats can not overlap\"\n\n	#   it \"knows two boats can not be next to each other\"\n	# end \n\n",
+			"file": "boat_spec.rb",
+			"file_size": 487,
+			"file_write_time": 130428293660000000,
+			"settings":
+			{
+				"buffer_size": 677,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Nico/Dropbox/Programming/Makers/Day16/battleship/lib/board.rb",
+			"settings":
+			{
+				"buffer_size": 1123,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Nico/Dropbox/Programming/Makers/Day16/battleship/lib/boat.rb",
+			"settings":
+			{
+				"buffer_size": 1051,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 287.0,
+		"selected_items":
+		[
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 67.0,
+		"history":
+		[
+			"rspec",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Nico/Dropbox/Programming/Makers/Day15/inject-method/spec/inject_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day15/inject-method/lib/inject.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Architect-Test/lib/godzilla.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Architect-Test/spec/weather_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Architect-Test/lib/weather.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/clones/Airport-control-flow_vers2/spec/plane_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/clones/Airport-control-flow_vers2/spec/airport_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/clones/Airport-control-flow_vers2/lib/airport.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/clones/Airport-control-flow_vers2/lib/plane.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Architect-Test/spec/airport_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Architect-Test/spec/airplane_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Architect-Test/lib/airplane.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Architect-Test/airport_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/spec/person_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/lib/person.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/lib/boris_bikes.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/lib/docking_station.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/lib/transit_van.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/lib/bikecontainer.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/lib/garage.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/spec/boris_bikes_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/spec/docking_station_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/spec/transit_van_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/spec/bikecontainer_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/spec/garage_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/rob-boris-bikes/boris-bikes/boris_classes.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/boris-bikes/lib/boris_bikes.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/boris-bikes/lib/person.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/boris-bikes/lib/docking_station.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/boris-bikes/spec/boris_bikes_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/boris-bikes/spec/person_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/boris-bikes/spec/docking_station_spec.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day11/boris-bikes/Require_classes.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day3/student-directory/directory.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day6/fizzbuzz/lib/fizzbuzz.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day6/fizzbuzz/spec/fizzbuzz_spec.rb",
+		"/Users/Nico/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/Nico/Dropbox/Programming/Makers/Day7/Euler/euler-problems/README.md",
+		"/Users/Nico/Library/Application Support/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/Users/Nico/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/Nico/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/Nico/Dropbox/Programming/Nicolearnsruby/rbs/bankaccount/bankaccount.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day3/correction of faulty crap/faulty_code.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day3/student-directory/README.md",
+		"/Users/Nico/Dropbox/Programming/Makers/Day5/unixoid-checklist/unixoid-checklist/my/public/files/t-vars.count",
+		"/Users/Nico/.bash_profile",
+		"/Users/Nico/.zshrc",
+		"/Users/Nico/Dropbox/Programming/Makers/Day4/terminal/.zshrc",
+		"/Users/Nico/Dropbox/Programming/Makers/Day4/Ruby2/hello.rb",
+		"/Users/Nico/Dropbox/Programming/Makers/Day3/collabo/student-directory/directory.rb",
+		"/Users/Nico/env",
+		"/Users/Nico/Dropbox/Programming/Nicolearnsruby/rbs/bankaccount1.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/README.md",
+		"/Users/Nico/Dropbox/Programming/gitbashcompletion",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/gitignoe",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/login.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/new.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/newentry.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/postnew.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/delete.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/entries.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/list.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/update.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/youreloggedoutlist.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/usernotfoundlogin.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/wrongpasswordlogin.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/pleasefillinsignup.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/pleasechooseanothersignup.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/successfullysignedup.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/sorrynoentries.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/listentries.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/sitepoint/views/layout.erb.html",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/signup.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/telefonbuch/views/index.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/sitepoint/views/index.erb",
+		"/Users/Nico/Dropbox/Programming/devmb/sitepoint/views/index.html",
+		"/Users/Nico/Dropbox/Programming/devmb/sitepoint/main.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/sitepoint/views/layout.haml",
+		"/Users/Nico/Dropbox/Programming/devmb/sitepoint/views/about.haml",
+		"/Users/Nico/Dropbox/Programming/devmb/sitepoint/public/css/styles.css",
+		"/Users/Nico/Dropbox/Programming/devmb/sitepoint/Gemfile",
+		"/Users/Nico/Dropbox/Programming/devmb/sitepoint/Procfile",
+		"/Users/Nico/Dropbox/Programming/devmb/rspec/codebreaker/features/step_definitions/codebreaker_steps.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/rspec/codebreaker/spec/codebreaker/game_spec.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/rspec/codebreaker/features/step_definitions/codebreaker_step.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/rspec/04/features/step_definitions/codebreaker_steps.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/rspec/codebreaker/features/support/env.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/rspec/06/lib/codebreaker/game.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/rspec/codebreaker/features/codebreaker_submits_guess.feature",
+		"/Users/Nico/Dropbox/Programming/devmb/rspec/codebreaker/lib/codebreaker/game.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/rspec/codebreaker/features/codebreaker_starts_game.feature",
+		"/Users/Nico/Dropbox/Programming/devmb/rspec/codebreaker/game.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/hash_spec.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/rspec/greeter_spec.rb",
+		"/Users/Nico/Dropbox/Programming/devmb/rspec/hello/features/step_definitions/greeter_steps.rb",
+		"/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/Headers/AppleScript.h"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"land_plane_check_capacity",
+			"ground_planes",
+			"nil",
+			"planes",
+			"generator",
+			"planes_at_airport",
+			"stock",
+			"garage",
+			")		",
+			"release",
+			"pick_up_from",
+			"pick_up_from_station",
+			"accept_bike",
+			"load_students_in_terminal",
+			"try_load_students",
+			"true",
+			"divisibel",
+			"end",
+			"is_divisibe_by_three",
+			"end",
+			"alt+super",
+			"alt+super+left",
+			"alt+super+leftarrow",
+			"alt+super+left",
+			"super+alt",
+			"super+alt+left",
+			"super + alt",
+			"\"super\" + \"alt\"",
+			"\"super\" + \"option\"",
+			"previous",
+			"array",
+			"counter",
+			"noentry",
+			"center",
+			"students",
+			"chomp",
+			"wrongpw"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"placeholder",
+			"form"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "board_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2325,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/RSpec/RSpec.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "boat_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 677,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/RSpec/RSpec.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "/Users/Nico/Dropbox/Programming/Makers/Day16/battleship/lib/board.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1123,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/Nico/Dropbox/Programming/Makers/Day16/battleship/lib/boat.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1051,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								623,
+								623
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 27.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "Battleships.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"telefonbuch/views/list.erb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 50.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

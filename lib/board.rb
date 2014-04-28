@@ -1,11 +1,13 @@
+require 'boat'
+
 class Board
 
-  
+
   attr_reader :rows
 
   def initialize(player='norman_no_name')
-  	@player = player
-  	@rows = create_board
+    @player = player
+    @rows = create_board
   end
 
   def owner
@@ -27,37 +29,51 @@ class Board
   end
 
   def extract_row(coordinates)
-  	number = coordinates.chars.last.to_i
+    number = coordinates.chars.last.to_i
     number -= 1
   end
 
   def opponent_view
-    	opponent_array = []
-    	10.times { opponent_array << Array.new(10,"")}
-  	return opponent_array
+    opponent_array = []
+    10.times { opponent_array << Array.new(10,"")}
+    return opponent_array
   end
 
   def register_shot(coordinates)
     x, y = translate(coordinates)
     case @rows[x][y]
-      when "s" then @rows[x][y] = "x"
-      when "" then @rows[x][y] = 'o'
+    when "s" then @rows[x][y] = "x"
+    when "" then @rows[x][y] = 'o'
     end
   end
 
   def place(boat)
-    boat.boat_body.each do |coordinate|
-      x, y = coordinate
-      @rows[x][y] = 's'
+    if check_availability(boat)
+      boat.boat_body.each do |coordinate|
+        x, y = coordinate
+        @rows[x][y] = 's'
+      end
     end
   end
 
-  
+  def check_availability(boat)
+    bad_array = boat.boat_body.select do
+      |cell|
+      x,y = cell
+      return true if @rows[x][y] == "s"
+    end
+    if bad_array.empty?
+      true
+    else
+      self.place(Boat.new(boat.boat_length))
+      return false
+    end
+  end
 
 end
 
 
-=begin 
+=begin
 This is how we created our LETTER to column constant:
 
 Hash[*[*'A'..'J'].each_with_index.map{
