@@ -1,9 +1,7 @@
 require_relative './boat'
 
 class Board
-
-  attr_reader :rows, :boats
-  attr_accessor :opponent_view
+  attr_accessor :opponent_view, :rows, :boats, :player
 
   def initialize(player='norman_no_name')
     @player = player

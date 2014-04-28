@@ -2,6 +2,8 @@ require_relative './board.rb'
 
 class Player
 
+  attr_accessor :name, :board
+
   def initialize(name)
     @name = name
     @board = Board.new(@name)
