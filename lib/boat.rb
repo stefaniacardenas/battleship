@@ -20,14 +20,12 @@ class Boat
 			if @orientation == :horizontal
 
 				positioning_range = 10 - boat_length
-				starting_position = [rand(10),rand(positioning_range)]
-				puts "#{starting_position.inspect} , #{@orientation}"
+				return starting_position = [rand(10),rand(positioning_range)]
 
 			elsif @orientation == :vertical
 
 				positioning_range = 10 - boat_length
-				starting_position = [rand(positioning_range), rand(10)]
-				puts "#{starting_position.inspect} , #{@orientation}"
+				return starting_position = [rand(positioning_range), rand(10)]
 
 			end
 	end
