@@ -2,13 +2,14 @@ require_relative './boat'
 
 class Board
 
-
   attr_reader :rows, :boats
+  attr_accessor :opponent_view
 
   def initialize(player='norman_no_name')
     @player = player
     @rows = create_board
     @boats = []
+    opponent_array
     generate_boats
   end
 
@@ -53,17 +54,21 @@ class Board
     number -= 1
   end
 
-  def opponent_view
-    opponent_array = []
-    10.times { opponent_array << Array.new(10,"")}
-    return opponent_array
+  def opponent_array
+    @opponent_view = []
+    10.times { @opponent_view << Array.new(10,"")}
+    return @opponent_view
   end
 
   def register_shot(coordinates)
     x, y = translate(coordinates)
     case @rows[x][y]
-    when "s" then @rows[x][y] = "x"
-    when "" then @rows[x][y] = 'o'
+    when "s" 
+      @rows[x][y] = "x"
+      @opponent_view[x][y] = "x"
+    when ""
+      @rows[x][y] = 'o'
+      @opponent_view[x][y] = 'o'
     end
   end
 

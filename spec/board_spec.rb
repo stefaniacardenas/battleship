@@ -89,6 +89,7 @@ describe 'Board' do
       board.place(boat_1)
       board.register_shot('B3')
       expect(board.rows[1][2]).to eq 'x'
+      expect(board.opponent_view[1][2]).to eq 'x'
     end
 
     xit "can register a miss" do
