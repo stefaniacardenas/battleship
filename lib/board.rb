@@ -49,22 +49,23 @@ class Board
 
   def place(boat)
     if check_availability(boat)
+      puts "passed availability check"
       boat.boat_body.each do |coordinate|
         x, y = coordinate
         @rows[x][y] = 's'
       end
-    else
-    self.place(Boat.new(boat.boat_length))
     end
   end
 
   def check_availability(boat)
+    puts "checking availability"
     bad_array = boat.boat_body.select do
-      |cell|
+      |cell| puts "here is a cell #{cell}"
       x,y = cell
       true if @rows[x][y] == "s"
     end
-    bad_array.nil?
+   puts "bad_array = #{bad_array}"
+    bad_array.empty?
     end
 
 end
