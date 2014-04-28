@@ -4,9 +4,15 @@ describe 'Board' do
 
   let(:player) {double :player, name: 'Bob'}
   let(:board)  {Board.new(player)}
-  let(:boat_1) {double :boat , boat_body: [[1,1],[1,2],[1,3],[1,4],[1,5],[1,6]], boat_length: 6}
-  let(:boat_2) {double :boat , boat_body: [[9,5],[8,5]]}
-  let(:boat_3) {double :boat , boat_body: [[1,6],[1,7],[1,8]], boat_length: 3}
+  let(:boat_1) {double :boat , boat_body: [[1,2],[1,3],[1,4],[1,5],[1,6]], boat_length: 5}
+  let(:boat_2) {double :boat , boat_body: [[9,5],[8,5][7,5][6,5]], boat_length: 4}
+  let(:boat_3) {double :boat, boat_body:  [[3,1],[3,2],[3,3]], boat_length: 3}
+  let(:boat_4) {double :boat , boat_body: [[2,5],[2,6]], boat_length: 2}
+  let(:boat_overlap) {double :boat , boat_body: [[1,6],[1,7],[1,8]], boat_length: 3}
+
+  before do
+    #board.stub(:generate_boats).and_return([boat_1,boat_2,boat_3,boat_4])
+  end
 
   context "Board" do
 
@@ -82,7 +88,7 @@ describe 'Board' do
       board.stub(:check_availability).and_return(true)
       board.place(boat_1)
       board.register_shot('B2')
-      expect(board.rows[1][1]).to eq 'x'
+      expect(board.rows[1][2]).to eq 'x'
     end
 
     it "can register a miss" do
@@ -95,12 +101,12 @@ describe 'Board' do
   context 'Boats to board' do
 
     it 'can check availability for a boat' do
-      expect(board.check_availability(boat_3)).to be_true
+      expect(board.check_availability(boat_overlap)).to be_true
     end
 
     it "returns false when boat can't be placed" do
       board.place(boat_1)
-      expect(board.check_availability(boat_3)).to be_false
+      expect(board.check_availability(boat_overlap)).to be_false
     end
 
     it 'creates 4 boats' do
@@ -119,17 +125,6 @@ end
 
 
 
-  # - an 'o' denotes a shot in the water
-  # - an 'x' denotes a hit on a ship
-  # - an 's' denotes a ship
-
-
-
-
-
-
-
-
-
-
-
+# - an 'o' denotes a shot in the water
+# - an 'x' denotes a hit on a ship
+# - an 's' denotes a ship

@@ -32,7 +32,6 @@ class Board
   end
 
   def place_all(boats)
-    puts "placing boats: #{boats}"
     boats.each do |boat|
       until check_availability(boat)
         boat = Boat.new(boat.boat_length)
